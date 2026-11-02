@@ -1,0 +1,15 @@
+// The legacy JavaScript generator keeps this beginner-friendly, CommonJS lab
+// compatible with require("@prisma/client") and plain Node.js (no TS runner).
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
